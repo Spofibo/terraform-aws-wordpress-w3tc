@@ -52,7 +52,6 @@ No modules.
 | <a name="input_cors_max_age_seconds"></a> [cors\_max\_age\_seconds](#input\_cors\_max\_age\_seconds) | The time in seconds that browser can cache the response for a preflight request | `number` | `3000` | no |
 | <a name="input_enable_cloudflare_access"></a> [enable\_cloudflare\_access](#input\_enable\_cloudflare\_access) | Toggle to enable Cloudflare access to the CDN bucket | `bool` | `false` | no |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Name prefix | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | AWS Region | `string` | `"eu-west-1"` | no |
 
 ## Outputs
 

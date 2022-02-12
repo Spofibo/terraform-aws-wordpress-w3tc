@@ -1,9 +1,3 @@
-variable "region" {
-  description = "AWS Region"
-  type        = string
-  default     = "eu-west-1"
-}
-
 variable "name_prefix" {
   description = "Name prefix"
   type        = string
