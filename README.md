@@ -5,7 +5,7 @@ Terraform module which creates the S3, IAM and policies required for W3TC's CDN 
 
 ```terraform
 module "mysite_w3tc" {
-  source = "https://github.com/Spofibo/terraform-aws-wordpress-w3tc"
+  source = "github.com/Spofibo/terraform-aws-wordpress-w3tc"
 
   name_prefix              = "site"
   cdn_url                  = "cdn.site.com"
