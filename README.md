@@ -1,6 +1,19 @@
 # Wordpress W3TC CDN for AWS Terraform module
 Terraform module which creates the S3, IAM and policies required for W3TC's CDN feature
 
+## Usage
+
+```terraform
+module "mysite_w3tc" {
+  source = "https://github.com/terraform-aws-modules/terraform-aws-vpc"
+
+  name_prefix              = "site"
+  cdn_url                  = "cdn.site.com"
+  cors_allowed_origins     = ["https://site.com"]
+  enable_cloudflare_access = true
+}
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
