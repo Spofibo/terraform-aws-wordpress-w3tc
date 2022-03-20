@@ -8,33 +8,25 @@ variable "cdn_url" {
   type        = string
 }
 
-variable "cors_allowed_headers" {
-  description = "Set of headers that are specified in the Access-Control-Request-Headers header"
-  type        = list(any)
-  default     = ["*"]
-}
-
-variable "cors_allowed_methods" {
-  description = "Set of HTTP methods that the origin is allowed to execute"
-  type        = list(any)
-  default     = ["GET"]
-}
-
-variable "cors_allowed_origins" {
-  description = "Set of origins customers are able to access the bucket from"
-  type        = list(any)
-}
-
-variable "cors_expose_headers" {
-  description = "Set of headers in the response that customers are able to access from their applications"
-  type        = list(any)
-  default     = ["ETag"]
-}
-
-variable "cors_max_age_seconds" {
-  description = "The time in seconds that browser can cache the response for a preflight request"
-  type        = number
-  default     = 3000
+variable "cors_configuration" {
+  description = "S3 bucket CORS configuration"
+  type = list(object({
+    allowed_headers : list(string)
+    allowed_methods : list(string)
+    allowed_origins : list(string)
+    expose_headers : list(string)
+    max_age_seconds : number
+  }))
+  default = [
+    {
+      allowed_headers : ["*"],
+      allowed_methods : ["GET"],
+      allowed_origins : ["*"],
+      expose_headers : ["ETag"],
+      max_age_seconds : 3000,
+      id : ""
+    }
+  ]
 }
 
 variable "enable_cloudflare_access" {
